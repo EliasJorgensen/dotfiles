@@ -8,4 +8,5 @@ and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/).
 * FFMPEG
 * Gifsicle
 * Oh My ZSH
+* Materialshell
 * Sublime Text 3
