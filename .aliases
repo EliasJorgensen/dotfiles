@@ -1,0 +1,26 @@
+# Easier navigation: .., ..., ~ and -
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Shortcuts
+alias dl='cd ~/Downloads'
+alias p='cd ~/Projects'
+alias s='cd ~/Projects/Sites'
+alias c='cd ~/Projects/Code'
+alias d='cd ~/Projects/Designs'
+alias t='cd ~/Projects/Tools'
+alias chrome='open -a google\ chrome'
+alias gmusic='open -a google\ chrome "http://music.google.com/"'
+alias gdrive='open ~/Google\ Drive/'
+alias gdriveweb='open -a google\ chrome "http://drive.google.com/"' 
+alias facebook='open -a google\ chrome "http://facebook.com/"'
+alias twitter='open -a google\ chrome "http://twitter.com/"'
+alias eliasjorgensen='open -a google\ chrome "https://eliasjorgensen.me"'
+
+# Start local server
+alias server='python -m SimpleHTTPServer'
+
+# Global tool configs
+alias addESLint='cp ~/Projects/Tools/Configs/eslintrc ./.eslintrc'
