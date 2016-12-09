@@ -1,5 +1,5 @@
 # Elias' dotfiles
-This repo contains the dotfiles i use on my personal machines.
+This repo contains the dotfiles i use on my personal machines.  
 I've scoured bits and pieces from [Matt Gaunt](https://github.com/gauntface/dotfiles/)
 and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/). 
 
@@ -9,6 +9,7 @@ and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/).
 * FFMPEG
 * Gifsicle
 * Materialshell
+* Google Chrome
 * Sublime Text 3
 
 ## Setup
