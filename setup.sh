@@ -19,7 +19,7 @@ cp eslintrc ~/Projects/Tools/Configs/eslintrc
 
 # Set up git global values
 cp gitignore ~/.gitignore_global
-cp gitattributes ~/.gitattributesß
+cp gitattributes ~/.gitattributes
 git config --global core.excludesfile '~/.gitignore_global'
 git config --global user.email "eliaszakarias@gmail.com"
 git config --global user.name "Elias Jørgensen"
