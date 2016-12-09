@@ -13,5 +13,5 @@ and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/).
 
 ## Setup
 * Run `setup.sh`
-* Download [materialshell](https://github.com/carloscuesta/materialshell#download) and install the theme.
+* Download [materialshell](https://github.com/carloscuesta/materialshell#download) and install the theme
 * Configure [shell colors](https://github.com/carloscuesta/materialshell#shell-colors)
