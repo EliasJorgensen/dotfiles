@@ -16,3 +16,4 @@ and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/).
 * Run `setup.sh`
 * Download [materialshell](https://github.com/carloscuesta/materialshell#download) and install the theme
 * Configure [shell colors](https://github.com/carloscuesta/materialshell#shell-colors)
+* Restart your terminal, or run `$ source ~/.zshrc`
