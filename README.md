@@ -4,9 +4,9 @@ I've scoured bits and pieces from [Matt Gaunt](https://github.com/gauntface/dotf
 and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/). 
 
 ## Prerequisites
+* ZSH
 * NVM
 * FFMPEG
 * Gifsicle
-* Oh My ZSH
 * Materialshell
 * Sublime Text 3
