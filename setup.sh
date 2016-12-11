@@ -1,8 +1,10 @@
 # Install Oh My Zsh
 curl -L http://install.ohmyz.sh | sh
 
+# Overwrite existing .zshrc with the custom one
 cp zshrc ~/.zshrc
 
+# Append alises
 cat aliases > ~/.aliases
 
 # Create project directory structure
