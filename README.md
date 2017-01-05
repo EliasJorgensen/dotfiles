@@ -13,6 +13,7 @@ As this are my personal dotfiles, the information in them are my own. If you wis
 * Materialshell
 * Google Chrome
 * Sublime Text 3
+* SimpleHTTP2Server
 
 ## Setup
 It is assumed that you already have ZSH up and running as your current shell.  

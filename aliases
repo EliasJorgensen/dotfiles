@@ -21,6 +21,7 @@ alias eliasjorgensen='open -a google\ chrome "https://eliasjorgensen.me"'
 
 # Start local server
 alias server='python -m SimpleHTTPServer'
+alias server2='simplehttp2server'
 
 # Global tool configs
 alias addESLint='cp ~/Projects/Tools/Configs/eslintrc ./.eslintrc'
