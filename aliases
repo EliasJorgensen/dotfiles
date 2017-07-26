@@ -25,3 +25,15 @@ alias server2='simplehttp2server'
 
 # Global tool configs
 alias addESLint='cp ~/Projects/Tools/Configs/eslintrc ./.eslintrc'
+
+# Tools
+alias sasshash='node /Users/elias/Projects/Code/Personal/sasshash/sasshash.js'
+
+# Docker
+alias dco="docker-compose"
+alias dcofresh="docker-compose-fresh"
+alias dcol="docker-compose logs -f --tail 100"
+alias fixip="sudo ifconfig lo0 alias 172.16.123.1 && echo 'Loopback has been aliased to 172.16.123.1'"
+function docker-clean() {
+  docker rmi -f $(docker images -q -a -f dangling=true)
+}

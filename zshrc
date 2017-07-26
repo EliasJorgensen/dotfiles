@@ -49,11 +49,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git node npm go nvm osx emoji-clock)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/elias/.themekit"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/elias/.themekit:/usr/local/share/dotnet:/Users/elias/.composer/vendor/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -73,6 +73,12 @@ export JOBS=max
 # Init nvm
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
+
+# Init Z
+. /usr/local/Cellar/z/1.9/etc/profile.d/z.sh
+
+# Init PHPBrew
+source /Users/elias/.phpbrew/bashrc
 
 # Start GPG Agent
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
@@ -116,6 +122,9 @@ gifify() {
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
+
+# Host IP (mostly for usage in docker)
+export HOST_IP="$(ip route get 0.0.0.0/0 | grep -Eo 'via \S+' | awk '{ print $2 }')"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
