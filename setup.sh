@@ -8,10 +8,8 @@ cp zshrc ~/.zshrc
 cat aliases > ~/.aliases
 
 # Create project directory structure
-mkdir -p ~/Projects
 mkdir -p ~/Projects/Code
 mkdir -p ~/Projects/Sites
-mkdir -p ~/Projects/Tools
 mkdir -p ~/Projects/Tools/Configs
 mkdir -p ~/Projects/Designs
 mkdir -p ~/Projects/Slides
