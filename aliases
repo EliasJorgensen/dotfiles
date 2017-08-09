@@ -9,6 +9,7 @@ alias dl='cd ~/Downloads'
 alias p='cd ~/Projects'
 alias s='cd ~/Projects/Sites'
 alias c='cd ~/Projects/Code'
+alias h='cd ~/Projects/Code/HTML24'
 alias d='cd ~/Projects/Designs'
 alias t='cd ~/Projects/Tools'
 alias chrome='open -a google\ chrome'
@@ -31,9 +32,15 @@ alias sasshash='node /Users/elias/Projects/Code/Personal/sasshash/sasshash.js'
 
 # Docker
 alias dco="docker-compose"
-alias dcofresh="docker-compose-fresh"
 alias dcol="docker-compose logs -f --tail 100"
 alias fixip="sudo ifconfig lo0 alias 172.16.123.1 && echo 'Loopback has been aliased to 172.16.123.1'"
+
 function docker-clean() {
   docker rmi -f $(docker images -q -a -f dangling=true)
+}
+
+# Syntax: dcorefresh target_service
+# Example: dcorefresh elastic_suggester_service
+function dcorefresh() {
+	dco kill $1 ; dco build $1 ; dco up -d $1
 }

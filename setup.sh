@@ -5,7 +5,7 @@ curl -L http://install.ohmyz.sh | sh
 cp zshrc ~/.zshrc
 
 # Append alises
-cat aliases > ~/.aliases
+cat aliases >> ~/.aliases
 
 # Create project directory structure
 mkdir -p ~/Projects/Code
