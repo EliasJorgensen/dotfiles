@@ -39,6 +39,10 @@ function docker-clean() {
   docker rmi -f $(docker images -q -a -f dangling=true)
 }
 
+function docker-clean-all() {
+  docker rmi -f $(docker images -q)
+}
+
 # Syntax: dcorefresh target_service
 # Example: dcorefresh elastic_suggester_service
 function dcorefresh() {
