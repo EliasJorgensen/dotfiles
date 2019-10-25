@@ -1,7 +1,10 @@
-# Make Nautilus open with same command as OS X
-open() {
-    nautilus $1 >/dev/null 2>/dev/null & disown
-}
+
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+	# Make Nautilus open with same command as OS X
+	open() {
+	    nautilus $1 >/dev/null 2>/dev/null & disown
+	}
+fi
 
 # Easier navigation
 alias ..='cd ..'
