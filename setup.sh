@@ -11,8 +11,6 @@ cat aliases >> ~/.aliases
 mkdir -p ~/Projects/Code
 mkdir -p ~/Projects/Sites
 mkdir -p ~/Projects/Tools/Configs
-mkdir -p ~/Projects/Designs
-mkdir -p ~/Projects/Slides
 
 # Set up config files for eslint
 cp eslintrc ~/Projects/Tools/Configs/eslintrc

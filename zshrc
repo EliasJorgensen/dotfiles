@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="materialshell-oceanic"
+ZSH_THEME="materialshell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,11 +49,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node npm go nvm osx emoji-clock)
+plugins=(git zsh-nvm)
 
 # User configuration
 
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/elias/.themekit:/usr/local/share/dotnet:/Users/elias/.composer/vendor/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -72,40 +72,19 @@ export JOBS=max
 
 # Init nvm
 export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
-
-# Init Z
-. /usr/local/Cellar/z/1.9/etc/profile.d/z.sh
-
-# Init PHPBrew
-source /Users/elias/.phpbrew/bashrc
-
-# Start GPG Agent
-if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-  source ~/.gnupg/.gpg-agent-info
-  export GPG_AGENT_INFO
-  GPG_TTY=$(tty)
-  export GPG_TTY
-else
-  eval $(gpg-agent --daemon)
-fi
 
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 
-gifify() {
-  if [[ -n "$1" ]]; then
-    if [[ $2 == '--good' ]]; then
-      ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
-      time convert -verbose +dither -layers Optimize -resize 1200x1200\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > $1.gif
-      rm out-static*.png
-    else
-      ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > $1.gif
-    fi
-  else
-    echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
+. /opt/z.sh
+
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+          source /etc/profile.d/vte.sh
   fi
-}
+fi
+
+#export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks/
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -121,10 +100,7 @@ gifify() {
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/id_rsa"
-
-# Host IP (mostly for usage in docker)
-export HOST_IP="$(ip route get 0.0.0.0/0 | grep -Eo 'via \S+' | awk '{ print $2 }')"
+export SSH_KEY_PATH="~/.ssh/elias_personal.key"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -133,3 +109,6 @@ export HOST_IP="$(ip route get 0.0.0.0/0 | grep -Eo 'via \S+' | awk '{ print $2 
 
 alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
