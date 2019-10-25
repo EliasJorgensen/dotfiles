@@ -1,3 +1,8 @@
+# Make Nautilus open with same command as OS X
+open() {
+    nautilus $1 >/dev/null 2>/dev/null & disown
+}
+
 # Easier navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -7,33 +12,22 @@ alias .....='cd ../../../..'
 # Shortcuts
 alias dl='cd ~/Downloads'
 alias p='cd ~/Projects'
-alias s='cd ~/Projects/Sites'
-alias c='cd ~/Projects/Code'
-alias h='cd ~/Projects/Code/HTML24'
-alias d='cd ~/Projects/Designs'
 alias t='cd ~/Projects/Tools'
-alias chrome='open -a google\ chrome'
-alias gmusic='open -a google\ chrome "http://music.google.com/"'
-alias gdrive='open ~/Google\ Drive/'
-alias gdriveweb='open -a google\ chrome "http://drive.google.com/"' 
-alias facebook='open -a google\ chrome "http://facebook.com/"'
-alias twitter='open -a google\ chrome "http://twitter.com/"'
-alias eliasjorgensen='open -a google\ chrome "https://eliasjorgensen.me"'
+alias c='cd ~/Projects/Code'
+alias ca='cd ~/Projects/Code/Acto'
+alias cop='cd ~/Projects/Code/Personal'
+alias cs='cd ~/Projects/Code/School'
+alias chrome='google-chrome'
 
 # Start local server
 alias server='python -m SimpleHTTPServer'
-alias server2='simplehttp2server'
 
 # Global tool configs
 alias addESLint='cp ~/Projects/Tools/Configs/eslintrc ./.eslintrc'
+alias addEditorConfig='cp ~/Projects/Tools/Configs/editorconfig ./.editorconfig'
 
-# Tools
-alias sasshash='node /Users/elias/Projects/Code/Personal/sasshash/sasshash.js'
-
-# Docker
+# Docker-compose shortcuts
 alias dco="docker-compose"
-alias dcol="docker-compose logs -f --tail 100"
-alias fixip="sudo ifconfig lo0 alias 172.16.123.1 && echo 'Loopback has been aliased to 172.16.123.1'"
 
 function docker-clean() {
   docker rmi -f $(docker images -q -a -f dangling=true)
@@ -41,10 +35,4 @@ function docker-clean() {
 
 function docker-clean-all() {
   docker rmi -f $(docker images -q)
-}
-
-# Syntax: dcorefresh target_service
-# Example: dcorefresh elastic_suggester_service
-function dcorefresh() {
-	dco kill $1 ; dco build $1 ; dco up -d $1
 }
