@@ -78,7 +78,7 @@ LC_ALL=en_US.UTF-8
 
 . /opt/z.sh
 
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
           source /etc/profile.d/vte.sh
   fi
