@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-nvm)
+plugins=(git zsh-nvm docker docker-compose gatsby gradle httpie ubuntu yarn)
 
 # User configuration
 
@@ -78,10 +78,8 @@ LC_ALL=en_US.UTF-8
 
 . /opt/z.sh
 
-if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-  if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-          source /etc/profile.d/vte.sh
-  fi
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+      source /etc/profile.d/vte.sh
 fi
 
 #export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks/
@@ -109,6 +107,8 @@ export SSH_KEY_PATH="~/.ssh/elias_personal.key"
 
 alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+½
