@@ -8,12 +8,8 @@ cp zshrc ~/.zshrc
 cat aliases >> ~/.aliases
 
 # Create project directory structure
-mkdir -p ~/Projects/Code
-mkdir -p ~/Projects/Sites
-mkdir -p ~/Projects/Tools/Configs
-
-# Set up config files for eslint
-cp eslintrc ~/Projects/Tools/Configs/eslintrc
+mkdir -p ~/dev/acto
+mkdir -p ~/dev/personal
 
 # Set up git global values
 cp gitignore ~/.gitignore_global
