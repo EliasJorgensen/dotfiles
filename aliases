@@ -1,10 +1,7 @@
 
-if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-	# Make Nautilus open with same command as OS X
-	open() {
-	    nautilus $1 >/dev/null 2>/dev/null & disown
-	}
-fi
+open() {
+    nautilus $1 >/dev/null 2>/dev/null & disown
+}
 
 # Easier navigation
 alias ..='cd ..'
@@ -14,20 +11,13 @@ alias .....='cd ../../../..'
 
 # Shortcuts
 alias dl='cd ~/Downloads'
-alias p='cd ~/Projects'
-alias t='cd ~/Projects/Tools'
-alias c='cd ~/Projects/Code'
-alias ca='cd ~/Projects/Code/Acto'
-alias cop='cd ~/Projects/Code/Personal'
-alias cs='cd ~/Projects/Code/School'
+alias d='cd ~/dev'
+alias da='cd ~/dev/acto'
+alias dp='cd ~/dev/personal'
 alias chrome='google-chrome'
 
 # Start local server
 alias server='python -m SimpleHTTPServer'
-
-# Global tool configs
-alias addESLint='cp ~/Projects/Tools/Configs/eslintrc ./.eslintrc'
-alias addEditorConfig='cp ~/Projects/Tools/Configs/editorconfig ./.editorconfig'
 
 # Docker-compose shortcuts
 alias dco="docker-compose"
